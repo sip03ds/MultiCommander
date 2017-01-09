@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="form">
+	<p:layout fullPage="true">
+		<p:layoutUnit id="up" position="north" size="130" header="" resizable="true" closable="fals" collapsible="true">
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:row>
+					<p:column>
+						<h:graphicImage value="resources/images/nova-ote_tv.jpg" height="70" width="120" />
+					</p:column>
+					<p:column>
+						<h:outputText value="#{display.theme}:" />
+						<p:themeSwitcher effectSpeed="normal" effect="fade" style="width:165px" id="defaultSwitcher" value="#{themeSwitcherBean.theme}">
+							<f:selectItem itemLabel="#{display.select} #{display.theme}" itemValue="" />
+							<f:selectItems value="#{themeSwitcherBean.themes}" />
+							<p:ajax global="false" listener="#{themeSwitcherBean.saveTheme}" />
+						</p:themeSwitcher>
+					</p:column>	
+				</p:row>
+			</h:panelGrid>	
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<p:growl id="msgs" showDetail="true" />
+			<p:tabView id="shredder" >
+				<p:tab title="#{display.tab1}">
+					<h:panelGrid id="display" columns="2" cellpadding="15">
+						<row> 
+							<p:dataTable var="remotes" id="remotes" value="1" >
+								<p:column colspan="1">  
+									<h:graphicImage value="resources/images/Pace_831HD.jpg" width="240" />
+								</p:column>
+								<p:column colspan="3" > 
+									<p:media value="https://www.youtube.com/watch?v=c6bEs3dxjPg" width="1024"  height="768" player="flash"/>
+								</p:column>
+							</p:dataTable> 							
+						</row>
+					</h:panelGrid>
+				</p:tab>
+				
+				<p:tab title="#{display.tab2}">
+					<h:panelGrid id="display2" columns="2" cellpadding="15">
+						<row> 
+							<p:dataTable var="remotes2" id="remotes2" value="1" >
+								<p:column colspan="1">  
+									<h:graphicImage value="resources/images/KAON_1110NS.jpg" width="240" />
+								</p:column>
+								<p:column colspan="3"> 
+									<p:media value="https://www.youtube.com/watch?v=c6bEs3dxjPg" width="1024"  height="768" player="flash"/>
+								</p:column>
+							</p:dataTable> 							
+						</row>
+					</h:panelGrid>
+				</p:tab>
+				
+				<p:tab title="#{display.tab3}">
+					<h:panelGrid id="display3" columns="2" cellpadding="15">
+						<row> 
+							<p:dataTable var="remotes3" id="remotes3" value="1" >
+								<p:column colspan="1">  
+									<h:graphicImage value="resources/images/Advance_Accoustics_xi60.jpg" width="240" />
+								</p:column>
+								<p:column colspan="3"> 
+									<h:graphicImage value="resources/images/soundonly.jpg" width="1024"  height="768"/>
+								</p:column>
+							</p:dataTable> 							
+						</row>
+					</h:panelGrid>
+				</p:tab>
+				
+				<p:tab title="#{display.tab4}">
+					<h:panelGrid id="display4" columns="2" cellpadding="15">
+						<row> 
+							<p:dataTable var="remotes4" id="remotes4" value="1" >
+								<p:column colspan="1">  
+									<h:graphicImage value="resources/images/Advance_Accoustics_xi90.jpg" width="240" />
+								</p:column>
+								<p:column colspan="3"> 
+									<h:graphicImage value="resources/images/soundonly.jpg" width="1024"  height="768"/>
+								</p:column>
+							</p:dataTable> 							
+						</row>
+					</h:panelGrid>
+				</p:tab>
+				
+				<p:tab title="#{display.tab5}">
+					<h:panelGrid id="display5" columns="2" cellpadding="15">
+						<row> 
+							<p:dataTable var="remotes5" id="remotes5" value="1" >
+								<p:column colspan="1">  
+									<h:graphicImage value="resources/images/Denon_X4000.jpg" width="240" />
+								</p:column>
+								<p:column colspan="3"> 
+									<h:graphicImage value="resources/images/soundonly.jpg" width="1024"  height="768" />
+								</p:column>
+							</p:dataTable> 							
+						</row>
+					</h:panelGrid>
+				</p:tab>			
+			</p:tabView>
+		</p:layoutUnit>
+	</p:layout>
+	</h:form>
+</h:body>
+</html>
